@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Muhammad Handra Haq</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 80vh;
+            background-color: lightgray;
+        }
+
+        .container {
+            width: 500px;
+            padding: 20px;
+            border: 2px solid lightblue;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fff;
+            margin: auto;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: auto;
+        }
+
+        .circle-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .small-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1, p {
+            text-align: center;
+            font-style: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .date-time {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            font-size: 14px;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="foto saya.jpg" alt="my photo">
+        <h1>Muhammad Handra Haq</h1>
+        <p>1202223014</p>
+        <p>S1 Sistem Informasi</p>
+        <div class="circle-row">
+            <a href="https://www.instagram.com/handrahaq/" target="_blank">
+                <div class="small-circle" style="background-image: url('foto instagram.png');"></div>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-handra-haq-88b6b3294/" target="_blank">
+                <div class="small-circle" style="background-image: url('foto linkedin.png');"></div>
+            </a>
+            <a href="https://github.com/ardnahh6" target="_blank">
+                <div class="small-circle" style="background-image: url('foto github.png');"></div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="date-time" id="dateTime"></div>
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('dateTime');
+            const now = new Date();
+            const options = { 
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+            };
+            const date = now.toLocaleDateString('id-ID', options);
+            const time = now.toLocaleTimeString('id-ID');
+            dateTimeElement.textContent = `${date}, ${time}`;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+</body>
+</html>
